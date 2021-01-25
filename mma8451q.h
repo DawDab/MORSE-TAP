@@ -1,5 +1,5 @@
 #define INT_SOURCE        0x0C 
-#define REG_WHO_AM_I      0x1D
+#define ACC_ADDR          0x1D
 #define HP_FILTER_CUTOFF  0x0F 
 #define PULSE_CFG         0x21 
 #define PULSE_SRC         0x22 
