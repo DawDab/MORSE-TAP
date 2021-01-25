@@ -29,14 +29,14 @@ int main (void)
 
 { 
 	SysTick_Config(1000000); 								/* initialize system timer */
-	LED_Init ();	 													/* initialize all LEDs */ 
-	LED_Welcome();  												/* blink with all LEDs */
+	LED_Init ();	 									/* initialize all LEDs */ 
+	LED_Welcome();  									/* blink with all LEDs */
 	
-	UART_Init(9600);												/* initialize UART */ 
+	UART_Init(9600);									/* initialize UART */ 
 	UART_Println("\n\r### Morse Tap Project ###");
 
-	I2C_Init();															/* initialize I2C */
-	Mma8451q_Init();												/* initialize mma8451q */
+	I2C_Init();										/* initialize I2C */
+	Mma8451q_Init();									/* initialize mma8451q */
 	
 	
 
@@ -44,13 +44,12 @@ int main (void)
 	
 	while(1)
 	{
-		__WFI();
 		
 		if(newTick == 1)
 		{
 			newTick = 0;
 			
-			if(msTicks % 100 == 0)
+			if(msTicks % 50 == 0)
 			{
 				convert(letter);
 				iterator = 0;
@@ -61,9 +60,10 @@ int main (void)
 				letter[4] = '0';
 			}
 			
-			if(msTicks % 300 == 0)
+			if(msTicks % 200 == 0)
 			{
 				msTicks = 0;
+				LED_Blink(LED_RED,100);
 				UART_Print(" ");
 			}
 		}
