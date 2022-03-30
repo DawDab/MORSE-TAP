@@ -8,3 +8,6 @@ Celem projektu jest wykonanie dekodera wystukiwanego kodu Morse'a. Detekcję pos
 
 **Plan realizacji:**
 Do wykonania projektu wykorzystamy płytkę FRDM-KL05Z z wbudowanym akcelerometrem mma8451q.
+
+**Prezentacja działania:**
+https://www.youtube.com/watch?v=efAbveBcD7k
